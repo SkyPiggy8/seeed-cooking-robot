@@ -1,0 +1,25 @@
+recipe:
+  name: tomato_egg
+  display_name: 番茄炒蛋半自动流程
+  mode: semi_autonomous
+  steps:
+    - skill: move_home
+    - skill: detect
+      object: tomato
+    - skill: pick
+      object: tomato
+    - skill: place
+      target: pan
+    - skill: detect
+      object: egg_bowl
+    - skill: pick
+      object: egg_bowl
+    - skill: pour
+      source: egg_bowl
+      target: pan
+    - skill: stir
+      target: pan
+      seconds: 5
+    - skill: place
+      target: plate
+    - skill: move_home

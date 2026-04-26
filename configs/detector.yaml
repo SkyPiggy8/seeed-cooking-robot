@@ -1,0 +1,17 @@
+detector:
+  backend: yolo
+  model_path: weights/kitchen_yolo.pt
+  confidence_threshold: 0.35
+  iou_threshold: 0.45
+  use_obb: true
+  mock_mode: true
+  classes:
+    - tomato
+    - egg
+    - egg_bowl
+    - bowl
+    - pan
+    - plate
+    - spatula
+    - seasoning
+    - burger

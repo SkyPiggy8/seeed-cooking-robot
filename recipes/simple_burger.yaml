@@ -1,0 +1,13 @@
+recipe:
+  name: simple_burger
+  display_name: 汉堡摆盘
+  mode: semi_autonomous
+  steps:
+    - skill: move_home
+    - skill: detect
+      object: burger
+    - skill: pick
+      object: burger
+    - skill: place
+      target: plate
+    - skill: move_home

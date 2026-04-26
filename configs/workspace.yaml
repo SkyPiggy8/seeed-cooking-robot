@@ -1,0 +1,32 @@
+workspace:
+  frame: robot_base
+  table_height_m: 0.0
+  x_min_m: 0.15
+  x_max_m: 0.65
+  y_min_m: -0.35
+  y_max_m: 0.35
+  z_min_m: 0.02
+  z_max_m: 0.55
+
+fixed_targets:
+  home:
+    position_m: [0.30, 0.00, 0.35]
+    yaw_rad: 0.0
+  bowl:
+    position_m: [0.42, 0.18, 0.08]
+    yaw_rad: 0.0
+  pan:
+    position_m: [0.48, -0.12, 0.10]
+    yaw_rad: 0.0
+  plate:
+    position_m: [0.32, 0.25, 0.08]
+    yaw_rad: 0.0
+  burger_prep_area:
+    position_m: [0.40, 0.00, 0.08]
+    yaw_rad: 0.0
+
+hazard_zones:
+  hot_pan_zone:
+    center_m: [0.48, -0.12, 0.08]
+    radius_m: 0.16
+    require_human_confirm: true

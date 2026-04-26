@@ -1,0 +1,15 @@
+robot:
+  name: rebot_arm_b601_dm
+  controller_backend: mock   # mock | motorbridge | ros2 | pinocchio
+  dry_run: true
+  base_frame: robot_base
+  tool_frame: gripper
+  default_speed: 0.2
+  gripper:
+    open_width_m: 0.065
+    close_width_m: 0.01
+  safety:
+    max_speed: 0.25
+    min_z_m: 0.02
+    pregrasp_lift_m: 0.10
+    emergency_stop_enabled: true

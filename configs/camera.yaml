@@ -1,0 +1,10 @@
+camera:
+  name: orbbec_gemini_2
+  rgb_topic: /camera/color/image_raw
+  depth_topic: /camera/depth/image_raw
+  frame_id: camera_color_optical_frame
+  depth_scale: 0.001
+  width: 1280
+  height: 720
+  fps: 30
+  mock_mode: true

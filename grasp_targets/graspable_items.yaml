@@ -1,0 +1,42 @@
+items:
+  - name: tomato
+    display_name: 番茄
+    role: ingredient
+    grip: top_down
+    preferred_target: pan
+    notes: 颜色明显，适合做第一轮识别和抓取测试。夹取时不要压得太紧。
+
+  - name: egg_bowl
+    display_name: 鸡蛋碗
+    role: container
+    grip: side_or_rim
+    preferred_target: pan
+    notes: 比直接抓鸡蛋稳定，后续可以接倒入动作。
+
+  - name: burger
+    display_name: 汉堡
+    role: staple
+    grip: soft_top_down
+    preferred_target: plate
+    notes: 适合主食摆盘。建议低速夹取，避免把面包压变形。
+
+  - name: seasoning
+    display_name: 调料瓶
+    role: tool
+    grip: side
+    preferred_target: pan
+    notes: 适合测试竖直物体。倒料动作先保留人工确认。
+
+  - name: bowl
+    display_name: 碗
+    role: placement_target
+    grip: avoid_initially
+    preferred_target: null
+    notes: 第一阶段主要作为放置目标，等夹爪和碰撞边界稳定后再考虑抓取。
+
+  - name: plate
+    display_name: 盘子
+    role: placement_target
+    grip: avoid_initially
+    preferred_target: null
+    notes: 主要用于摆盘，先不要让机械臂直接夹盘子。

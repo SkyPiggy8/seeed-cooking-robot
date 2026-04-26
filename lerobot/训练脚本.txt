@@ -1,0 +1,188 @@
+lerobot-teleoperate \
+    --robot.type=seeed_b601_dm_follower \
+    --robot.port=/dev/ttyACM0 \
+    --robot.id=follower1 \
+    --robot.can_adapter=damiao \
+    --robot.cameras="{ front: {type: opencv, index_or_path: 0, width: 640, height: 480, fps: 30, fourcc: "MJPG"}, side: {type: opencv, index_or_path: 2, width: 640, height: 480, fps: 30, fourcc: "MJPG"}}" \
+    --teleop.type=rebot_arm_102_leader \
+    --teleop.port=/dev/ttyUSB0 \
+    --teleop.id=rebot_arm_102_leader \
+    --display_data=true
+
+
+
+
+    # 另一种可能
+
+lerobot-teleoperate \
+  --robot.type=seeed_b601_dm_follower \
+  --robot.port=/dev/ttyACM0 \
+  --robot.id=follower1 \
+  --robot.can_adapter=damiao \
+  --robot.cameras='{
+    orbbec_color: {
+      type: orbbec_color,
+      serial_number_or_name: "Orbbec Gemini2 (4-1-2)",
+      width: 640,
+      height: 480,
+      fps: 30,
+      color_mode: rgb,
+      rotation: 0,
+      warmup_s: 1
+    },
+    orbbec_depth: {
+      type: orbbec_depth,
+      serial_number_or_name: "Orbbec Gemini2 (4-1-2)",
+      width: 640,
+      height: 400,
+      fps: 30,
+      depth_alpha: 0.2,
+      rotation: 0,
+      warmup_s: 5
+    }
+  }' \
+  --teleop.type=rebot_arm_102_leader \
+  --teleop.port=/dev/ttyUSB0 \
+  --teleop.id=rebot_arm_102_leader \
+  --display_data=true
+
+
+
+
+
+
+
+lerobot-teleoperate \
+  --robot.type=seeed_b601_dm_follower \
+  --robot.port=/dev/ttyACM0 \
+  --robot.id=follower1 \
+  --robot.can_adapter=damiao \
+  --robot.cameras='{
+    orbbec_color: {
+      type: orbbec_color,
+      serial_number_or_name: "Orbbec Gemini2 (2-2-2)",
+      width: 640,
+      height: 480,
+      fps: 30,
+      color_mode: rgb,
+      rotation: 0,
+      warmup_s: 1
+    }
+  }' \
+  --teleop.type=rebot_arm_102_leader \
+  --teleop.port=/dev/ttyUSB0 \
+  --teleop.id=rebot_arm_102_leader \
+  --display_data=true
+
+
+
+    如果你想数据集保存在本地，可以直接运行：
+
+lerobot-record \
+    --robot.type=so101_follower \
+    --robot.port=/dev/ttyACM0 \
+    --robot.id=my_awesome_follower_arm \
+    --robot.cameras='{ front: {type: opencv, index_or_path: 0, width: 640, height: 480, fps: 30, fourcc: "MJPG"}, side: {type: opencv, index_or_path: 2, width: 640, height: 480, fps: 30, fourcc: "MJPG"} }' \
+    --teleop.type=so101_leader \
+    --teleop.port=/dev/ttyACM1 \
+    --teleop.id=my_awesome_leader_arm \
+    --display_data=true \
+    --dataset.repo_id=seeedstudio123/test \
+    --dataset.num_episodes=5 \
+    --dataset.single_task="Grab the black cube" \
+    --dataset.push_to_hub=false \
+    --dataset.episode_time_s=30 \
+    --dataset.reset_time_s=30 
+
+
+
+
+
+    conda activate lerobot && lerobot-teleoperate   --robot.type=seeed_b601_dm_follower   --robot.port=/dev/ttyACM0   --robot.id=follower1   --robot.can_adapter=damiao   --robot.cameras='{
+    orbbec_color: {
+      type: orbbec_color,
+      serial_number_or_name: "AY6Z36300TS",
+      width: 640,
+      height: 480,
+      fps: 30,
+      color_mode: rgb,
+      rotation: 0,
+      warmup_s: 1
+    },
+    orbbec_depth: {
+      type: orbbec_depth,
+      serial_number_or_name: "AY6Z36300TS",
+      width: 640,
+      height: 400,
+      fps: 30,
+      depth_alpha: 0.2,
+      rotation: 0,
+      warmup_s: 5
+    },
+        front: {type: opencv, index_or_path: 0, width: 640, height: 480, fps: 30, fourcc: "MJPG"}
+  }'   --teleop.type=rebot_arm_102_leader   --teleop.port=/dev/ttyUSB0   --teleop.id=rebot_arm_102_leader   --display_data=true
+
+
+
+
+
+
+
+
+  lerobot-record \
+    --robot.type=seeed_b601_dm_follower
+    --robot.port=/dev/ttyACM0   --robot.id=follower1   --robot.can_adapter=damiao
+    --robot.id=my_awesome_follower_arm \
+    --robot.cameras="{
+        orbbec_color: {
+          type: orbbec_color,
+          serial_number_or_name: "AY6Z36300TS",
+          width: 640,
+          height: 480,
+          fps: 30,
+          color_mode: rgb,
+          rotation: 0,
+          warmup_s: 1
+        },
+        orbbec_depth: {
+          type: orbbec_depth,
+          serial_number_or_name: "AY6Z36300TS",
+          width: 640,
+          height: 400,
+          fps: 30,
+          depth_alpha: 0.2,
+          rotation: 0,
+          warmup_s: 5
+        },
+        front: {type: opencv, index_or_path: 0, width: 640, height: 480, fps: 30, fourcc: "MJPG"}
+      }"
+    --teleop.type=rebot_arm_102_leader
+    --teleop.port=/dev/ttyUSB0
+    --teleop.id=rebot_arm_102_leader \
+    --display_data=true \
+    --dataset.repo_id=seeedstudio123/test \
+    --dataset.num_episodes=5 \
+    --dataset.single_task="Grab the black cube" \
+    --dataset.push_to_hub=false \
+    --dataset.episode_time_s=30 \
+    --dataset.reset_time_s=30 
+
+
+
+
+
+lerobot-record \
+    --robot.type=seeed_b601_dm_follower \
+    --robot.port=/dev/ttyACM0 \
+    --robot.id=follower1 \
+    --robot.can_adapter=damiao \
+    --teleop.type=rebot_arm_102_leader \
+    --teleop.port=/dev/ttyUSB0 \
+    --teleop.id=rebot_arm_102_leader \
+    --display_data=true \
+    --dataset.repo_id=seeed_rebot_b601_dm/test \
+    --dataset.num_episodes=5 \
+    --dataset.single_task="Grab the black cube" \
+    --dataset.push_to_hub=false \
+    --dataset.episode_time_s=30 \
+    --dataset.reset_time_s=30 
